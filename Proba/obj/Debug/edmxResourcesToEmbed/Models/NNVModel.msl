@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NNVModelStoreContainer" CdmEntityContainer="NNVEntities">
+    <EntitySetMapping Name="Clanovi">
+      <EntityTypeMapping TypeName="NNVModel.Clanovi">
+        <MappingFragment StoreEntitySet="Clanovi">
+          <ScalarProperty Name="ClanID" ColumnName="ClanID" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="ImePrezime" ColumnName="ImePrezime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
+          <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prilozi">
+      <EntityTypeMapping TypeName="NNVModel.Prilozi">
+        <MappingFragment StoreEntitySet="Prilozi">
+          <ScalarProperty Name="PrilogID" ColumnName="PrilogID" />
+          <ScalarProperty Name="SednicaID" ColumnName="SednicaID" />
+          <ScalarProperty Name="DokumentID" ColumnName="DokumentID" />
+          <ScalarProperty Name="NazivPriloga" ColumnName="NazivPriloga" />
+          <ScalarProperty Name="Putanja" ColumnName="Putanja" />
+          <ScalarProperty Name="Poslato" ColumnName="Poslato" />
+          <ScalarProperty Name="DatumSlanja" ColumnName="DatumSlanja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prisustvo">
+      <EntityTypeMapping TypeName="NNVModel.Prisustvo">
+        <MappingFragment StoreEntitySet="Prisustvo">
+          <ScalarProperty Name="ClanID" ColumnName="ClanID" />
+          <ScalarProperty Name="SednicaID" ColumnName="SednicaID" />
+          <ScalarProperty Name="Prisutan" ColumnName="Prisutan" />
+          <ScalarProperty Name="Opravdano" ColumnName="Opravdano" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sednice">
+      <EntityTypeMapping TypeName="NNVModel.Sednice">
+        <MappingFragment StoreEntitySet="Sednice">
+          <ScalarProperty Name="SednicaID" ColumnName="SednicaID" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="VrstaSednice" ColumnName="VrstaSednice" />
+          <ScalarProperty Name="Ucionica" ColumnName="Ucionica" />
+          <ScalarProperty Name="Zapisnik" ColumnName="Zapisnik" />
+          <ScalarProperty Name="Poziv" ColumnName="Poziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="NNVModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VrsteDokumenata">
+      <EntityTypeMapping TypeName="NNVModel.VrsteDokumenata">
+        <MappingFragment StoreEntitySet="VrsteDokumenata">
+          <ScalarProperty Name="DokumentID" ColumnName="DokumentID" />
+          <ScalarProperty Name="VrstaDokumenta" ColumnName="VrstaDokumenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

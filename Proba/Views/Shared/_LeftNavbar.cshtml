@@ -1,0 +1,22 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-left">
+    @*<a class="navbar-brand" href="#">Brand</a>*@
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Pretraga", "Search", "Home")</li>
+        <li>@Html.ActionLink("Sednice", "Index", "Sednices")</li>
+        <li>@Html.ActionLink("Clanovi", "Index", "Clanovi")</li>
+        <li>@Html.ActionLink("Prilozi", "Prilozi", "Home")</li>
+
+
+        @{
+
+
+            if (User.IsInRole("Admin"))
+            { Html.RenderPartial("~/Views/Shared/_DugmeZaAdmina.cshtml"); }
+        }
+
+
+
+
+
+    </ul>
+</div>
