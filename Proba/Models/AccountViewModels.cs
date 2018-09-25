@@ -102,7 +102,7 @@ namespace Proba.Models
 
         [Required]
         [Display(Name ="Uloga")]
-        public string Name { get; set; }
+        public string Uloga { get; set; }
 
         //public string UserName { get; internal set; }
     }
