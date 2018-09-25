@@ -171,9 +171,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminClanoviController.cs" />
+    <Compile Include="Controllers\AdminSedniceController.cs" />
     <Compile Include="Controllers\ClanoviController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PriloziController.cs" />
+    <Compile Include="Controllers\PrisustvoController.cs" />
     <Compile Include="Controllers\PromenaEmaila2Controller.cs" />
     <Compile Include="Controllers\SednicesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -312,11 +315,22 @@
     <Content Include="Views\AdminClanovi\Details.cshtml" />
     <Content Include="Views\AdminClanovi\Edit.cshtml" />
     <Content Include="Views\AdminClanovi\Index.cshtml" />
+    <Content Include="Views\AdminSednice\Create.cshtml" />
+    <Content Include="Views\AdminSednice\Delete.cshtml" />
+    <Content Include="Views\AdminSednice\Details.cshtml" />
+    <Content Include="Views\AdminSednice\Edit.cshtml" />
+    <Content Include="Views\AdminSednice\Index.cshtml" />
+    <Content Include="Views\Prisustvo\Details.cshtml" />
+    <Content Include="Views\Prisustvo\Edit.cshtml" />
+    <Content Include="Views\Prisustvo\Index.cshtml" />
+    <Content Include="Views\Prisustvo\Create.cshtml" />
+    <Content Include="Views\AdminSednice\Prisustvo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\" />
     <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Prilozi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Proba.Models.Prisustvo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Prisutan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opravdano)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clanovi.ImePrezime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sednice.SednicaID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prisutan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opravdano)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clanovi.ImePrezime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sednice.SednicaID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { SednicaID=item.SednicaID, ClanID = item.ClanID}) |
+            @Html.ActionLink("Details", "Details", new { SednicaID=item.SednicaID, ClanID = item.ClanID }) |
+            
+        </td>
+    </tr>
+}
+
+</table>
+@{
+    Html.RenderPartial("~/Views/Shared/_LeftNavbar.cshtml");
+}

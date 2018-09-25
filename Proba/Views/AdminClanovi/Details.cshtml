@@ -68,6 +68,9 @@
 
     </dl>
 </div>
+@{
+    Html.RenderPartial("~/Views/Shared/_LeftNavbar.cshtml");
+}
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ClanID }) |
     @Html.ActionLink("Back to List", "Index")

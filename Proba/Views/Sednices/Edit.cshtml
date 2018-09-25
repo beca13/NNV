@@ -68,6 +68,9 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+@{
+    Html.RenderPartial("~/Views/Shared/_LeftNavbar.cshtml");
+}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

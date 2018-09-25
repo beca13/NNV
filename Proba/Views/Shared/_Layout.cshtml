@@ -18,12 +18,15 @@
                     <span class="icon-bar"></span>
                 </button>*@
                 @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-                <img src="~/Content/Images/icon.png" height="50" width="477" />
-            </div>
+                <a href="@Url.Action("Index", "Home")" title="Home" class="links">
+                    <img alt="Home" src="@Url.Content("~/Content/Images/icon.png")" height="50" width="477"></a>
+                    @*<img src="~/Content/Images/icon.png" height="50" width="477" />*@
+</div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     
-                    <li style="font-size:40px;color:red;">Nastavno Naucno Vece</li>
+                    <li style="font-size:40px;color:red;">Наставно Научно Веће</li>
+                    @*<li>@Html.ActionLink("Nastavno Naucno Vece", "Index","Home", routeValues: null, htmlAttributes: new { id = "registerLink", Style = "font-size:40px;color:Red;" })</li>*@
                     @*<li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
@@ -36,16 +39,7 @@
     <div class="container body-content">
         @RenderBody()
         @*<hr />*@
-        <footer>
-
-
-            @if (Request.UrlReferrer != null)
-            {
-                <a class="bottomNav" onclick="history.go(-1); return false;" href="#">Back</a><br />
-            }
-
-            <p style="text-align: center;">&copy; @DateTime.Now.Year - Ime nase aplikacije</p>
-        </footer>
+        
     </div>
 
     @Scripts.Render("~/bundles/jquery")

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Proba.Models.Prisustvo>
+
+@{
+    ViewBag.Title = "Prisustvo";
+}
+
+<h2>Prisustvo za sednicu @ViewBag.SednicaID</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SednicaID)
+            
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clanovi.ImePrezime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prisutan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opravdano)
+        </th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SednicaID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clanovi.ImePrezime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prisutan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opravdano)
+            </td>
+            
+            
+        </tr>
+    }
+
+</table>

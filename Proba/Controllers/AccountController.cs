@@ -163,7 +163,7 @@ namespace Proba.Controllers
                 if (result.Succeeded)
                 {
                     //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    var resultRoleAdd = await UserManager.AddToRoleAsync(user.Id, model.Uloga);
+                    var resultRoleAdd = await UserManager.AddToRoleAsync(user.Id, model.Name);
 
                     if (resultRoleAdd.Succeeded)
                     {
@@ -175,12 +175,12 @@ namespace Proba.Controllers
                         string komanda = $@"insert into Clanovi (KorisnickoIme, Ime, Prezime
                                         , Lozinka, Email, Uloga, status) 
                                         values ('{model.UserName}', '{model.Ime}','{model.Prezime}',
-                                         '{model.Password}','{model.Email}','{model.Uloga}', 1) ";
-                        db.Database.ExecuteSqlCommand(komanda);
-                        db.SaveChanges();
+                                         '{model.Password}','{model.Email}','{model.Name}', 1) ";
+                    db.Database.ExecuteSqlCommand(komanda);
+                    db.SaveChanges();
 
-                        return RedirectToAction("Index", "Home");
-                    }
+                    return RedirectToAction("Index", "Home");
+                }
                     else
                     {
                         AddErrors(resultRoleAdd);
@@ -189,7 +189,6 @@ namespace Proba.Controllers
                 AddErrors(result);
             }
 
-           
             // If we got this far, something failed, redisplay form
             return View(model);
         }

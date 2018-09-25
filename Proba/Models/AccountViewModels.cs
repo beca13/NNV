@@ -97,11 +97,12 @@ namespace Proba.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-               
+
+       
 
         [Required]
         [Display(Name ="Uloga")]
-        public string Uloga { get; set; }
+        public string Name { get; set; }
 
         //public string UserName { get; internal set; }
     }

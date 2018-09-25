@@ -12,7 +12,7 @@
 </p>*@
 
 
-<div class="container">
+<div class="container" st>
     <h1>P R E T R A G A</h1>
     <form method="get">
         
@@ -25,57 +25,63 @@
 </form>
 </div>
 
+<div style="margin: 20px;">
 
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SednicaID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Datum)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.VrstaSednice)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Ucionica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zapisnik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Poziv)
+            </th>
+            <th></th>
+        </tr>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.SednicaID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Datum)
-        </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.VrstaSednice)
-        </th>*@
-        <th>
-            @Html.DisplayNameFor(model => model.Ucionica)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Zapisnik)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Poziv)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SednicaID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Datum)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.VrstaSednice)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ucionica)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zapisnik)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Poziv)
+                </td>
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.SednicaID }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.SednicaID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.SednicaID })
+                    </td>*@
+            </tr>
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SednicaID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Datum)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.VrstaSednice)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.Ucionica)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Zapisnik)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Poziv)
-        </td>
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SednicaID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SednicaID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SednicaID })
-        </td>*@
-    </tr>
-}
+    </table>
+</div>
+    @{
+        Html.RenderPartial("~/Views/Shared/_LeftNavbar.cshtml");
+    }
 
-</table>

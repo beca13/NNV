@@ -53,6 +53,7 @@
 
     </dl>
 
+
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
@@ -60,5 +61,8 @@
             <input type="submit" value="Delete" class="btn btn-default" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
+    }
+    @{
+        Html.RenderPartial("~/Views/Shared/_LeftNavbar.cshtml");
     }
 </div>

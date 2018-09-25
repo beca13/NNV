@@ -10,6 +10,7 @@ using Proba.Models;
 
 namespace Proba.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminClanoviController : Controller
     {
         private NNVEntities db = new NNVEntities();

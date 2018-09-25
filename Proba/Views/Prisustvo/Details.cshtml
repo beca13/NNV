@@ -1,0 +1,59 @@
+﻿@model Proba.Models.Prisustvo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Prisustvo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SednicaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SednicaID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Prisutan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prisutan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opravdano)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opravdano)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clanovi.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clanovi.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sednice.VrstaSednice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sednice.VrstaSednice)
+        </dd>
+
+    </dl>
+</div>
+@{
+    Html.RenderPartial("~/Views/Shared/_LeftNavbar.cshtml");
+}
+<p>
+    @Html.ActionLink("Edit", "Edit", new { SednicaID = Model.SednicaID, ClanID = Model.ClanID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

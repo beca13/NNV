@@ -12,12 +12,14 @@ namespace Proba.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    
 
     public partial class Prisustvo
     {
-        [Key]
+        [Key, Column(Order = 1)]
         public int ClanID { get; set; }
-        [Key]
+        [Key, Column(Order = 0)]
         public int SednicaID { get; set; }
         public bool Prisutan { get; set; }
         public Nullable<bool> Opravdano { get; set; }
