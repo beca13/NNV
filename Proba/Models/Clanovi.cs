@@ -20,7 +20,8 @@ namespace Proba.Models
         {
             this.Prisustvo = new HashSet<Prisustvo>();
         }
-        [Key]
+
+        [Key]    
         public int ClanID { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
@@ -29,6 +30,7 @@ namespace Proba.Models
         public bool Status { get; set; }
         public string KorisnickoIme { get; set; }
         public string Lozinka { get; set; }
+        public string Uloga { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Prisustvo> Prisustvo { get; set; }

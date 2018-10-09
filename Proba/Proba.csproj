@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -217,9 +218,6 @@
     <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>NNVModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\VrsteDokumenata.cs">
-      <DependentUpon>NNVModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -325,12 +323,12 @@
     <Content Include="Views\Prisustvo\Index.cshtml" />
     <Content Include="Views\Prisustvo\Create.cshtml" />
     <Content Include="Views\AdminSednice\Prisustvo.cshtml" />
+    <Content Include="Views\Prilozi\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\" />
     <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Prilozi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

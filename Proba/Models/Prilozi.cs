@@ -12,9 +12,10 @@ namespace Proba.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Prilozi
-    {   [Key]
+    {
+        [Key]
         public int PrilogID { get; set; }
         public int SednicaID { get; set; }
         public int DokumentID { get; set; }
@@ -23,7 +24,6 @@ namespace Proba.Models
         public Nullable<bool> Poslato { get; set; }
         public Nullable<System.DateTime> DatumSlanja { get; set; }
     
-        public virtual VrsteDokumenata VrsteDokumenata { get; set; }
         public virtual Sednice Sednice { get; set; }
     }
 }

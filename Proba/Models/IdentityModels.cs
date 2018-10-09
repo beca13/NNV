@@ -29,5 +29,11 @@ namespace Proba.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Proba.Models.Prilozi> Prilozis { get; set; }
+
+        public System.Data.Entity.DbSet<Proba.Models.Sednice> Sednices { get; set; }
+
+        
     }
 }

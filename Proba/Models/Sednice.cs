@@ -12,7 +12,6 @@ namespace Proba.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
     public partial class Sednice
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +20,7 @@ namespace Proba.Models
             this.Prilozi = new HashSet<Prilozi>();
             this.Prisustvo = new HashSet<Prisustvo>();
         }
-        
+
         [Key]
         public int SednicaID { get; set; }
         public System.DateTime Datum { get; set; }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="NNVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="NNVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Clanovi">
           <Key>
             <PropertyRef Name="ClanID" />
@@ -17,12 +17,13 @@
           <Property Name="Status" Type="bit" Nullable="false" />
           <Property Name="KorisnickoIme" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Lozinka" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Uloga" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Prilozi">
           <Key>
             <PropertyRef Name="PrilogID" />
           </Key>
-          <Property Name="PrilogID" Type="int" Nullable="false" />
+          <Property Name="PrilogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SednicaID" Type="int" Nullable="false" />
           <Property Name="DokumentID" Type="int" Nullable="false" />
           <Property Name="NazivPriloga" Type="nvarchar(max)" />
@@ -61,13 +62,6 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <EntityType Name="VrsteDokumenata">
-          <Key>
-            <PropertyRef Name="DokumentID" />
-          </Key>
-          <Property Name="DokumentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="VrstaDokumenta" Type="nvarchar(max)" Nullable="false" />
-        </EntityType>
         <Association Name="FK_ClanID">
           <End Role="Clanovi" Type="Self.Clanovi" Multiplicity="1" />
           <End Role="Prisustvo" Type="Self.Prisustvo" Multiplicity="*" />
@@ -77,18 +71,6 @@
             </Principal>
             <Dependent Role="Prisustvo">
               <PropertyRef Name="ClanID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_DokumentID">
-          <End Role="VrsteDokumenata" Type="Self.VrsteDokumenata" Multiplicity="1" />
-          <End Role="Prilozi" Type="Self.Prilozi" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="VrsteDokumenata">
-              <PropertyRef Name="DokumentID" />
-            </Principal>
-            <Dependent Role="Prilozi">
-              <PropertyRef Name="DokumentID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -122,14 +104,9 @@
           <EntitySet Name="Prisustvo" EntityType="Self.Prisustvo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sednice" EntityType="Self.Sednice" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VrsteDokumenata" EntityType="Self.VrsteDokumenata" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ClanID" Association="Self.FK_ClanID">
             <End Role="Clanovi" EntitySet="Clanovi" />
             <End Role="Prisustvo" EntitySet="Prisustvo" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DokumentID" Association="Self.FK_DokumentID">
-            <End Role="VrsteDokumenata" EntitySet="VrsteDokumenata" />
-            <End Role="Prilozi" EntitySet="Prilozi" />
           </AssociationSet>
           <AssociationSet Name="FK_SednicaID" Association="Self.FK_SednicaID">
             <End Role="Sednice" EntitySet="Sednice" />
@@ -140,8 +117,7 @@
             <End Role="Prilozi" EntitySet="Prilozi" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NNVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -158,6 +134,7 @@
           <Property Name="KorisnickoIme" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Lozinka" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Prisustvo" Relationship="Self.FK_ClanID" FromRole="Clanovi" ToRole="Prisustvo" />
+          <Property Name="Uloga" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Prilozi">
           <Key>
@@ -170,7 +147,6 @@
           <Property Name="Putanja" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Poslato" Type="Boolean" />
           <Property Name="DatumSlanja" Type="DateTime" Precision="7" />
-          <NavigationProperty Name="VrsteDokumenata" Relationship="Self.FK_DokumentID" FromRole="Prilozi" ToRole="VrsteDokumenata" />
           <NavigationProperty Name="Sednice" Relationship="Self.FKK_SednicaID" FromRole="Prilozi" ToRole="Sednice" />
         </EntityType>
         <EntityType Name="Prisustvo">
@@ -208,14 +184,6 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="VrsteDokumenata">
-          <Key>
-            <PropertyRef Name="DokumentID" />
-          </Key>
-          <Property Name="DokumentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="VrstaDokumenta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Prilozi" Relationship="Self.FK_DokumentID" FromRole="VrsteDokumenata" ToRole="Prilozi" />
-        </EntityType>
         <Association Name="FK_ClanID">
           <End Role="Clanovi" Type="Self.Clanovi" Multiplicity="1" />
           <End Role="Prisustvo" Type="Self.Prisustvo" Multiplicity="*" />
@@ -225,18 +193,6 @@
             </Principal>
             <Dependent Role="Prisustvo">
               <PropertyRef Name="ClanID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_DokumentID">
-          <End Role="VrsteDokumenata" Type="Self.VrsteDokumenata" Multiplicity="1" />
-          <End Role="Prilozi" Type="Self.Prilozi" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="VrsteDokumenata">
-              <PropertyRef Name="DokumentID" />
-            </Principal>
-            <Dependent Role="Prilozi">
-              <PropertyRef Name="DokumentID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -270,14 +226,9 @@
           <EntitySet Name="Prisustvo" EntityType="Self.Prisustvo" />
           <EntitySet Name="Sednice" EntityType="Self.Sednice" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <EntitySet Name="VrsteDokumenata" EntityType="Self.VrsteDokumenata" />
           <AssociationSet Name="FK_ClanID" Association="Self.FK_ClanID">
             <End Role="Clanovi" EntitySet="Clanovi" />
             <End Role="Prisustvo" EntitySet="Prisustvo" />
-          </AssociationSet>
-          <AssociationSet Name="FK_DokumentID" Association="Self.FK_DokumentID">
-            <End Role="VrsteDokumenata" EntitySet="VrsteDokumenata" />
-            <End Role="Prilozi" EntitySet="Prilozi" />
           </AssociationSet>
           <AssociationSet Name="FKK_SednicaID" Association="Self.FKK_SednicaID">
             <End Role="Sednice" EntitySet="Sednice" />
@@ -297,6 +248,7 @@
           <EntitySetMapping Name="Clanovi">
             <EntityTypeMapping TypeName="NNVModel.Clanovi">
               <MappingFragment StoreEntitySet="Clanovi">
+                <ScalarProperty Name="Uloga" ColumnName="Uloga" />
                 <ScalarProperty Name="ClanID" ColumnName="ClanID" />
                 <ScalarProperty Name="Ime" ColumnName="Ime" />
                 <ScalarProperty Name="Prezime" ColumnName="Prezime" />
@@ -351,14 +303,6 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="VrsteDokumenata">
-            <EntityTypeMapping TypeName="NNVModel.VrsteDokumenata">
-              <MappingFragment StoreEntitySet="VrsteDokumenata">
-                <ScalarProperty Name="DokumentID" ColumnName="DokumentID" />
-                <ScalarProperty Name="VrstaDokumenta" ColumnName="VrstaDokumenta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

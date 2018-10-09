@@ -10,9 +10,7 @@
         <EntityTypeShape EntityType="NNVModel.Prisustvo" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="NNVModel.Sednice" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="NNVModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="NNVModel.VrsteDokumenata" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="NNVModel.FK_ClanID" ManuallyRouted="false" />
-        <AssociationConnector Association="NNVModel.FK_DokumentID" ManuallyRouted="false" />
         <AssociationConnector Association="NNVModel.FKK_SednicaID" ManuallyRouted="false" />
         <AssociationConnector Association="NNVModel.FK_SednicaID" ManuallyRouted="false" />
       </Diagram>

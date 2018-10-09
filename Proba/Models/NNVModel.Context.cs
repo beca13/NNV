@@ -30,6 +30,5 @@ namespace Proba.Models
         public virtual DbSet<Prisustvo> Prisustvo { get; set; }
         public virtual DbSet<Sednice> Sednice { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<VrsteDokumenata> VrsteDokumenata { get; set; }
     }
 }
