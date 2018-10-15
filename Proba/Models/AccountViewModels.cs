@@ -65,20 +65,16 @@ namespace Proba.Models
 
     public class RegisterViewModel
     {
-        //[Required]
         
-        //[Display(Name = "Korisnicko ime")]
-        //public string UserName { get; set; }
-
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "{0} mora imati bar {2} slova!", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Lozinka")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Potvrda lozinke")]
+        [Compare("Password", ErrorMessage = "Lozinka i potvrda lozinke se ne poklapaju!")]
         public string ConfirmPassword { get; set; }
         [Required]
         [Display(Name = "Korisnicko ime")]
@@ -115,14 +111,14 @@ namespace Proba.Models
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "{0} mora imati bar {2} slova!", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Lozinka")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Potvrda lozinke")]
+        [Compare("Password", ErrorMessage = "Lozinka i potvrda lozinke se ne poklapaju!")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }

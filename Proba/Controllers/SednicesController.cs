@@ -10,11 +10,11 @@ using Proba.Models;
 
 namespace Proba.Controllers
 {
-    public class SednicesController : Controller
+    public class SedniceController : Controller
     {
         private NNVEntities db = new NNVEntities();
 
-        // GET: Sednices
+        // GET: Sednice
         public ActionResult Index(string searchTerm = null)
         {
             var model =
@@ -39,7 +39,7 @@ namespace Proba.Controllers
             return View(model);
         }
 
-        // GET: Sednices/Details/5
+        // GET: Sednice/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -54,13 +54,13 @@ namespace Proba.Controllers
             return View(sednice);
         }
 
-        // GET: Sednices/Create
+        // GET: Sednice/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Sednices/Create
+        // POST: Sednice/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -77,7 +77,7 @@ namespace Proba.Controllers
             return View(sednice);
         }
 
-        // GET: Sednices/Edit/5
+        // GET: Sednice/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -92,7 +92,7 @@ namespace Proba.Controllers
             return View(sednice);
         }
 
-        // POST: Sednices/Edit/5
+        // POST: Sednice/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -108,7 +108,7 @@ namespace Proba.Controllers
             return View(sednice);
         }
 
-        // GET: Sednices/Delete/5
+        // GET: Sednice/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -123,7 +123,7 @@ namespace Proba.Controllers
             return View(sednice);
         }
 
-        // POST: Sednices/Delete/5
+        // POST: Sednice/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

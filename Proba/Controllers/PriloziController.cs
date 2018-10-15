@@ -11,14 +11,19 @@ namespace Proba.Controllers
     public class PriloziController : Controller
     {        
             // GET: Home
-            public ActionResult Index()
+            public ActionResult Index(int? id)
             {
                 NNVEntities entities = new NNVEntities();
-                return View(entities.Prilozi.ToList());
+
+                //entities.Prilozi.ToList()
+                PriloziLite priloziLite = new PriloziLite();
+                priloziLite.SednicaID = id == null ? 0 : (int)id;
+
+                return View(priloziLite);
             }
 
             [HttpPost]
-            public ActionResult Index(HttpPostedFileBase postedFile)
+            public ActionResult Index(HttpPostedFileBase postedFile, int? SednicaID) 
             {
                 //Extract Image File Name.
                 string fileName = System.IO.Path.GetFileName(postedFile.FileName);
@@ -31,13 +36,12 @@ namespace Proba.Controllers
 
                 //Insert the Image File details in Table.
                 NNVEntities entities = new NNVEntities();
-            entities.Prilozi.Add
-            (new Prilozi
-            {
-
+                entities.Prilozi.Add
+                (new Prilozi
+                {
                 NazivPriloga = fileName,
                 Putanja = filePath,
-                SednicaID = 12,
+                
                 }
                 );
                 entities.SaveChanges();

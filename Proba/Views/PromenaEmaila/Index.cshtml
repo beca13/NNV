@@ -5,13 +5,13 @@
 </div>*@
 
 @model IEnumerable<Proba.Models.Clanovi>
-@*@model IEnumerable<Proba.Models.PromenaEmaila2ViewModel>*@
+@*@model IEnumerable<Proba.Models.PromenaEmailaViewModel>*@
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Menjanje E mail-a</h2>
 
 @*<p>
     @Html.ActionLink("Create New", "Create")
@@ -67,7 +67,7 @@
             @Html.DisplayFor(modelItem => item.Lozinka)
         </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ClanID }) |
+            @Html.ActionLink("Promena", "Edit", new { id=item.ClanID }) 
             @*@Html.ActionLink("Details", "Details", new { id=item.ClanID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ClanID })*@
         </td>

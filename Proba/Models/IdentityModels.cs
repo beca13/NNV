@@ -32,7 +32,7 @@ namespace Proba.Models
 
         public System.Data.Entity.DbSet<Proba.Models.Prilozi> Prilozis { get; set; }
 
-        public System.Data.Entity.DbSet<Proba.Models.Sednice> Sednices { get; set; }
+        public System.Data.Entity.DbSet<Proba.Models.Sednice> Sednice { get; set; }
 
         
     }

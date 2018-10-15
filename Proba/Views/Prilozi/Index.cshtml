@@ -1,5 +1,5 @@
 ﻿
-
+@model Proba.Models.PriloziLite
 @*@model IEnumerable<Proba.Models.Prilozi>
 @{
     Layout = null;
@@ -53,8 +53,9 @@
 <body>
     @using (Html.BeginForm("Index", "Prilozi", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
+    <div>Sednica ID: <input type="text" name="SednicaID" value="@(Model.SednicaID)" /></div>
         <input type="file" name="postedFile" />
-        <input type="submit" id="btnUpload" value="Upload" />
+        <input type="submit" id="btnUpload" value="Sačuvaj" />
     }
     <hr />
     @*@webGrid.GetHtml(

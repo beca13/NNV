@@ -12,7 +12,12 @@ namespace Proba.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+
+    public partial class PriloziLite
+    {
+        public int SednicaID { get; set; }
+    }
+
     public partial class Prilozi
     {
         [Key]

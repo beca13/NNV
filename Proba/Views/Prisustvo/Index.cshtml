@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Prisustvo na sednici</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Kreiraj novo prisustvo", "Create")
 </p>
 <table class="table">
     <tr>
@@ -41,8 +41,8 @@
             @Html.DisplayFor(modelItem => item.Sednice.SednicaID)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { SednicaID=item.SednicaID, ClanID = item.ClanID}) |
-            @Html.ActionLink("Details", "Details", new { SednicaID=item.SednicaID, ClanID = item.ClanID }) |
+            @Html.ActionLink("Izmeni", "Edit", new { SednicaID=item.SednicaID, ClanID = item.ClanID}) |
+            @Html.ActionLink("Detalji", "Details", new { SednicaID=item.SednicaID, ClanID = item.ClanID }) 
             
         </td>
     </tr>

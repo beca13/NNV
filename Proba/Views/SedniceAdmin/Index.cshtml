@@ -4,13 +4,16 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Sednice</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Kreiraj novu sednicu", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SednicaID)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Datum)
         </th>
@@ -32,6 +35,9 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.SednicaID)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Datum)
         </td>
         <td>
@@ -47,10 +53,11 @@
             @Html.DisplayFor(modelItem => item.Poziv)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SednicaID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SednicaID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SednicaID })
-            @Html.ActionLink("Prisustvo", "Prisustvo", new { id = item.SednicaID })
+            @Html.ActionLink("Izmeni", "Edit", new { id = item.SednicaID }) |
+            @Html.ActionLink("Detalji", "Details", new { id = item.SednicaID }) |
+            @Html.ActionLink("Obriši", "Delete", new { id = item.SednicaID }) |
+            @Html.ActionLink("Prisustvo", "Prisustvo", new { id = item.SednicaID }) |
+            @Html.ActionLink("Nov prilog", "../Prilozi/Index", new { id = item.SednicaID })
 
         </td>
     </tr>

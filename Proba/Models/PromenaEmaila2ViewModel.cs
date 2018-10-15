@@ -7,7 +7,7 @@ using Proba.Models;
 
 namespace Proba.Models
 {
-    public class PromenaEmaila2ViewModel
+    public class PromenaEmailaViewModel
     {
         
             public int ClanID { get; set; }

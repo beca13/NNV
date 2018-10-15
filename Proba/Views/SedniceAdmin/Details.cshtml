@@ -4,12 +4,19 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalji sednice @ViewBag.SednicaID</h2>
 
-<div>
-    <h4>Sednice</h4>
+<div>    
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SednicaID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SednicaID)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Datum)
         </dt>
@@ -49,13 +56,12 @@
         <dd>
             @Html.DisplayFor(model => model.Poziv)
         </dd>
-
-    </dl>
+    </dl>/>
 </div>
 @{
     Html.RenderPartial("~/Views/Shared/_LeftNavbar.cshtml");
 }
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SednicaID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Izmeni", "Edit", new { id = Model.SednicaID }) |
+    @Html.ActionLink("Povratak na prethodnu stranu", "Index")
 </p>

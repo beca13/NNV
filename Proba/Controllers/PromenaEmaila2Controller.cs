@@ -10,18 +10,18 @@ using Proba.Models;
 
 namespace Proba.Controllers
 {
-    public class PromenaEmaila2Controller : Controller
+    public class PromenaEmailaController : Controller
     {
         private NNVEntities db = new NNVEntities();
 
-        // GET: PromenaEmaila2
+        // GET: PromenaEmaila
         //public ActionResult Index()
         //{
         //    string username = User.Identity.Name;
 
         //    var model =
         //        db.Clanovi.Where(c => (c.KorisnickoIme == username))
-        //        .Select(c => new PromenaEmaila2ViewModel
+        //        .Select(c => new PromenaEmailaViewModel
         //        {
         //            ClanID = c.ClanID,
         //            Ime = c.Ime,
@@ -44,7 +44,7 @@ namespace Proba.Controllers
             return View(query);
         }
 
-        // GET: PromenaEmaila2/Details/5
+        // GET: PromenaEmaila/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -59,13 +59,13 @@ namespace Proba.Controllers
             return View(clanovi);
         }
 
-        // GET: PromenaEmaila2/Create
+        // GET: PromenaEmaila/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: PromenaEmaila2/Create
+        // POST: PromenaEmaila/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -82,7 +82,7 @@ namespace Proba.Controllers
             return View(clanovi);
         }
 
-        // GET: PromenaEmaila2/Edit/5
+        // GET: PromenaEmaila/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -99,7 +99,7 @@ namespace Proba.Controllers
             return View(clanovi);
         }
 
-        // POST: PromenaEmaila2/Edit/5
+        // POST: PromenaEmaila/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -115,7 +115,7 @@ namespace Proba.Controllers
             return View(clanovi);
         }
 
-        // GET: PromenaEmaila2/Delete/5
+        // GET: PromenaEmaila/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -130,7 +130,7 @@ namespace Proba.Controllers
             return View(clanovi);
         }
 
-        // POST: PromenaEmaila2/Delete/5
+        // POST: PromenaEmaila/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

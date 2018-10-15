@@ -11,17 +11,17 @@ using Proba.Models;
 namespace Proba.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class AdminSedniceController : Controller
+    public class SedniceAdminController : Controller
     {
         private NNVEntities db = new NNVEntities();
 
-        // GET: AdminSednice
+        // GET: SedniceAdmin
         public ActionResult Index()
         {
             return View(db.Sednice.ToList());
         }
 
-        // GET: AdminSednice/Details/5
+        // GET: SedniceAdmin/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,13 +36,13 @@ namespace Proba.Controllers
             return View(sednice);
         }
 
-        // GET: AdminSednice/Create
+        // GET: SedniceAdmin/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AdminSednice/Create
+        // POST: SedniceAdmin/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -59,7 +59,7 @@ namespace Proba.Controllers
             return View(sednice);
         }
 
-        // GET: AdminSednice/Edit/5
+        // GET: SedniceAdmin/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -74,7 +74,7 @@ namespace Proba.Controllers
             return View(sednice);
         }
 
-        // POST: AdminSednice/Edit/5
+        // POST: SedniceAdmin/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -90,7 +90,7 @@ namespace Proba.Controllers
             return View(sednice);
         }
 
-        // GET: AdminSednice/Delete/5
+        // GET: SedniceAdmin/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,7 +105,7 @@ namespace Proba.Controllers
             return View(sednice);
         }
 
-        // POST: AdminSednice/Delete/5
+        // POST: SedniceAdmin/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -116,7 +116,7 @@ namespace Proba.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: AdminSednice/Prisustvo/5
+        // GET: SedniceAdmin/Prisustvo/5
         public ActionResult Prisustvo(int? id)
         {
             if (id == null)
@@ -134,7 +134,7 @@ namespace Proba.Controllers
             return View(prisutni);
         }
 
-        // POST: AdminSednice/Prisustvo/5
+        // POST: SedniceAdmin/Prisustvo/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
