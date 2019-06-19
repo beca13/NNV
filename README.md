@@ -1,1 +1,1 @@
-Ovo je inicijalni projekat za NNV.
+Initial project for NNV (teaching scientific council).
